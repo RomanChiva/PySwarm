@@ -4,7 +4,11 @@ import pandas as pd
 from controller import controller
 
 
-a = [1,2]
-b = [3,4]
+a = np.array([True, True, False, False])
+b = np.array([True, True, False, True])
 
-print(a+b)
+c = np.multiply(a,b)
+
+sum = np.sum(c)
+
+print(sum)

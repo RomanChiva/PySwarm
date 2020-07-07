@@ -34,3 +34,21 @@ def dec_bin(state):
     bin = '{0:08b}'.format(state)
 
     return [int(n) for n in bin]
+
+
+
+
+def neighbourhoods(positions, threshold):
+
+
+    list = []
+
+    for n in range(len(positions)):
+
+        #Find which drones are close enough
+        distance_vect = np.delete(positions, n, 0) - positions[n]
+        distance_mag = np.linalg.norm(distance_vect, axis = 1)
+        in_neighbourhood_bool = distance_mag <= threshold*np.sqrt(2)+2
+        list.append(in_neighbourhood_bool)
+
+    return list
